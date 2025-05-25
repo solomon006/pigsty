@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "993059597520",
+    "project_id": "pigsty-1d042",
+    "storage_bucket": "pigsty-1d042.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993059597520:android:85e2390115b08c536a02d5",
+        "android_client_info": {
+          "package_name": "com.example.delicious"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqQ9nNPNMOsn8hs8ZTl_CavEGqMW6DSSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
