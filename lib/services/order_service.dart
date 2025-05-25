@@ -40,7 +40,6 @@ class OrderService {
       rethrow;
     }
   }
-
   // Get all orders for current user
   Stream<List<model.Order>> getUserOrders() {
     final userId = _auth.currentUser?.uid;
@@ -51,10 +50,12 @@ class OrderService {
     return _firestore
         .collection(collection)
         .where('userId', isEqualTo: userId)
-        .orderBy('createdAt', descending: true)
         .snapshots()
         .map((snapshot) {
-          return snapshot.docs.map((doc) => model.Order.fromFirestore(doc)).toList();
+          final orders = snapshot.docs.map((doc) => model.Order.fromFirestore(doc)).toList();
+          // Сортируем на стороне клиента
+          orders.sort((a, b) => b.createdAt.compareTo(a.createdAt));
+          return orders;
         });
   }
 
